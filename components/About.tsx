@@ -1,9 +1,9 @@
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 border-t border-white/10">
+    <section id="about" className="py-32 px-6 border-t border-black/10">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
         <div>
-          <p className="text-white text-xs font-semibold tracking-[0.25em] uppercase mb-6">
+          <p className="text-black/40 text-xs font-semibold tracking-[0.25em] uppercase mb-6">
             About
           </p>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-8">
@@ -11,9 +11,9 @@ export default function About() {
             <br />
             on the belief that
             <br />
-            <span className="text-white">visuals close deals.</span>
+            visuals close deals.
           </h2>
-          <div className="space-y-4 text-white/60 text-base leading-relaxed max-w-lg">
+          <div className="space-y-4 text-black/50 text-base leading-relaxed max-w-lg">
             <p>
               WaffleBox Productions is a remote-first creative studio handling
               photography, content, and design for brands that want to stand out.
@@ -23,22 +23,20 @@ export default function About() {
               everything in between — bringing the same level of craft and energy to
               every project.
             </p>
-            <p>
-              No average here. Just results.
-            </p>
+            <p>No average here. Just results.</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-px bg-white/10">
+        <div className="grid grid-cols-2 gap-px bg-black/10">
           {[
             { value: "18+", label: "Projects Delivered" },
             { value: "100%", label: "Remote Capable" },
             { value: "3", label: "Services Under One Roof" },
             { value: "Fast", label: "Turnaround" },
           ].map((stat) => (
-            <div key={stat.label} className="bg-[#080808] p-8">
-              <div className="text-3xl font-black text-white mb-2">{stat.value}</div>
-              <div className="text-white/40 text-sm">{stat.label}</div>
+            <div key={stat.label} className="bg-white p-8">
+              <div className="text-3xl font-black mb-2">{stat.value}</div>
+              <div className="text-black/40 text-sm">{stat.label}</div>
             </div>
           ))}
         </div>

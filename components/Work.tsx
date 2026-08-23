@@ -103,13 +103,13 @@ export default function Work() {
   return (
     <section id="work" className="py-32 px-6 max-w-6xl mx-auto">
       <div className="mb-12">
-        <p className="text-white text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+        <p className="text-black/40 text-xs font-semibold tracking-[0.25em] uppercase mb-4">
           Our Work
         </p>
         <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8">
           The results
           <br />
-          <span className="text-white/40">speak for themselves.</span>
+          <span className="text-black/30">speak for themselves.</span>
         </h2>
 
         <div className="flex flex-wrap gap-2">
