@@ -103,7 +103,7 @@ export default function Work() {
   return (
     <section id="work" className="py-32 px-6 max-w-6xl mx-auto">
       <div className="mb-12">
-        <p className="text-[#e8c547] text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+        <p className="text-white text-xs font-semibold tracking-[0.25em] uppercase mb-4">
           Our Work
         </p>
         <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8">
@@ -119,7 +119,7 @@ export default function Work() {
               onClick={() => setActive(cat)}
               className={`px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
                 active === cat
-                  ? "bg-[#e8c547] text-black"
+                  ? "bg-white text-black"
                   : "border border-white/20 text-white/50 hover:border-white/50 hover:text-white"
               }`}
             >
@@ -145,7 +145,7 @@ export default function Work() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-[#e8c547] text-xs font-mono tracking-widest uppercase mb-2">
+                <span className="text-white text-xs font-mono tracking-widest uppercase mb-2">
                   {project.category}
                 </span>
                 <h3 className="text-white font-bold text-lg leading-tight">

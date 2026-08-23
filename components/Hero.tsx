@@ -23,13 +23,13 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-        <p className="text-[#e8c547] text-sm font-semibold tracking-[0.25em] uppercase mb-6">
+        <p className="text-white text-sm font-semibold tracking-[0.25em] uppercase mb-6">
           Photography · Content · Design
         </p>
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none mb-6">
           WaffleBox
           <br />
-          <span className="text-[#e8c547]">Productions</span>
+          <span className="text-white">Productions</span>
         </h1>
         <p className="text-white/60 text-lg md:text-xl max-w-xl mx-auto mb-10">
           Not your average production house.
@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#work"
-            className="px-8 py-4 bg-[#e8c547] text-black font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-200"
+            className="px-8 py-4 bg-white text-black font-bold text-sm tracking-widest uppercase hover:bg-zinc-200 transition-colors duration-200"
           >
             See Our Work
           </a>

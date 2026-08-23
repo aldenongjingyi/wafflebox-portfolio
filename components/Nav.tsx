@@ -50,7 +50,7 @@ export default function Nav() {
         </div>
         <a
           href="#contact"
-          className="text-xs font-bold tracking-widest uppercase bg-[#e8c547] text-black px-5 py-2.5 hover:bg-white transition-colors duration-200"
+          className="text-xs font-bold tracking-widest uppercase bg-white text-black px-5 py-2.5 hover:bg-zinc-200 transition-colors duration-200"
         >
           Hire Us
         </a>

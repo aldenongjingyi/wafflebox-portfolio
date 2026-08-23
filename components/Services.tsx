@@ -26,7 +26,7 @@ export default function Services() {
   return (
     <section id="services" className="py-32 px-6 max-w-6xl mx-auto">
       <div className="mb-16">
-        <p className="text-[#e8c547] text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+        <p className="text-white text-xs font-semibold tracking-[0.25em] uppercase mb-4">
           What We Do
         </p>
         <h2 className="text-4xl md:text-5xl font-black tracking-tight">
@@ -42,7 +42,7 @@ export default function Services() {
             key={s.number}
             className="bg-[#080808] p-10 flex flex-col gap-6 group hover:bg-[#111] transition-colors duration-300"
           >
-            <span className="text-[#e8c547] text-xs font-mono tracking-widest">
+            <span className="text-white text-xs font-mono tracking-widest">
               {s.number}
             </span>
             <h3 className="text-2xl font-black tracking-tight">{s.title}</h3>

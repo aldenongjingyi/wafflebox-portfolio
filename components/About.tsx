@@ -3,7 +3,7 @@ export default function About() {
     <section id="about" className="py-32 px-6 border-t border-white/10">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
         <div>
-          <p className="text-[#e8c547] text-xs font-semibold tracking-[0.25em] uppercase mb-6">
+          <p className="text-white text-xs font-semibold tracking-[0.25em] uppercase mb-6">
             About
           </p>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-8">
@@ -11,7 +11,7 @@ export default function About() {
             <br />
             on the belief that
             <br />
-            <span className="text-[#e8c547]">visuals close deals.</span>
+            <span className="text-white">visuals close deals.</span>
           </h2>
           <div className="space-y-4 text-white/60 text-base leading-relaxed max-w-lg">
             <p>
@@ -37,7 +37,7 @@ export default function About() {
             { value: "Fast", label: "Turnaround" },
           ].map((stat) => (
             <div key={stat.label} className="bg-[#080808] p-8">
-              <div className="text-3xl font-black text-[#e8c547] mb-2">{stat.value}</div>
+              <div className="text-3xl font-black text-white mb-2">{stat.value}</div>
               <div className="text-white/40 text-sm">{stat.label}</div>
             </div>
           ))}
