@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 type Category = "All" | "Product" | "Portrait" | "Commercial";
 
@@ -119,8 +118,8 @@ export default function Work() {
               onClick={() => setActive(cat)}
               className={`px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
                 active === cat
-                  ? "bg-white text-black"
-                  : "border border-white/20 text-white/50 hover:border-white/50 hover:text-white"
+                  ? "bg-black text-white"
+                  : "border border-black/20 text-black/50 hover:border-black/50 hover:text-black"
               }`}
             >
               {cat}
@@ -136,13 +135,11 @@ export default function Work() {
             className="break-inside-avoid mb-4 group relative overflow-hidden bg-[#111]"
           >
             <div className="relative overflow-hidden">
-              <Image
-                src={project.image}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.image}`}
                 alt={project.title}
-                width={800}
-                height={1000}
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <span className="text-white text-xs font-mono tracking-widest uppercase mb-2">
