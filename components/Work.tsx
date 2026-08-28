@@ -1,155 +1,139 @@
 "use client";
 
-import { useState } from "react";
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-type Category = "All" | "Product" | "Portrait" | "Commercial";
-
-const projects = [
+const categories = [
   {
-    id: 1,
-    title: "Hari-Hara",
-    category: "Product" as Category,
-    image: "/images/work/product-hari-hara.jpg",
-    description: "Studio product photography",
+    name: "Product",
+    projects: [
+      {
+        title: "Hari-Hara",
+        images: ["/images/work/product-hari-hara.jpg"],
+      },
+      {
+        title: "Vegan Pesto",
+        images: ["/images/work/product-vegan-pesto.jpg"],
+      },
+      {
+        title: "Scoban",
+        images: ["/images/work/product-scoban.jpg"],
+      },
+      {
+        title: "Saludent",
+        images: ["/images/work/product-saludent.jpg"],
+      },
+      {
+        title: "Beverages",
+        images: ["/images/work/product-drinks.jpg"],
+      },
+      {
+        title: "Food",
+        images: ["/images/work/product-food.jpg"],
+      },
+    ],
   },
   {
-    id: 2,
-    title: "Vegan Pesto",
-    category: "Product" as Category,
-    image: "/images/work/product-vegan-pesto.jpg",
-    description: "Lifestyle product photography",
+    name: "Portrait",
+    projects: [
+      {
+        title: "Portrait Session",
+        images: [
+          "/images/work/portrait-1.jpg",
+          "/images/work/portrait-2.jpg",
+        ],
+      },
+      {
+        title: "Sunway Graduation",
+        images: [
+          "/images/work/event-graduation-1.jpg",
+          "/images/work/event-graduation-2.jpg",
+          "/images/work/event-graduation-3.jpg",
+        ],
+      },
+    ],
   },
   {
-    id: 3,
-    title: "Scoban",
-    category: "Product" as Category,
-    image: "/images/work/product-scoban.jpg",
-    description: "Clean product photography",
-  },
-  {
-    id: 4,
-    title: "Saludent",
-    category: "Product" as Category,
-    image: "/images/work/product-saludent.jpg",
-    description: "Herbal product photography",
-  },
-  {
-    id: 5,
-    title: "Beverages",
-    category: "Product" as Category,
-    image: "/images/work/product-drinks.jpg",
-    description: "Moody drinks photography",
-  },
-  {
-    id: 6,
-    title: "Food",
-    category: "Product" as Category,
-    image: "/images/work/product-food.jpg",
-    description: "Food photography",
-  },
-  {
-    id: 7,
-    title: "Portrait Session",
-    category: "Portrait" as Category,
-    image: "/images/work/portrait-1.jpg",
-    description: "Studio portrait",
-  },
-  {
-    id: 8,
-    title: "Portrait Session",
-    category: "Portrait" as Category,
-    image: "/images/work/portrait-2.jpg",
-    description: "Studio portrait",
-  },
-  {
-    id: 9,
-    title: "Klinik Anda",
-    category: "Commercial" as Category,
-    image: "/images/work/event-klinik.jpg",
-    description: "Commercial exterior photography",
-  },
-  {
-    id: 10,
-    title: "Sunway Graduation",
-    category: "Portrait" as Category,
-    image: "/images/work/event-graduation-1.jpg",
-    description: "Graduation photography at Sunway University",
-  },
-  {
-    id: 11,
-    title: "Sunway Graduation",
-    category: "Portrait" as Category,
-    image: "/images/work/event-graduation-2.jpg",
-    description: "Graduation photography at Sunway University",
-  },
-  {
-    id: 12,
-    title: "Sunway Graduation",
-    category: "Portrait" as Category,
-    image: "/images/work/event-graduation-3.jpg",
-    description: "Graduation photography at Sunway University",
+    name: "Commercial",
+    projects: [
+      {
+        title: "Klinik Anda",
+        images: ["/images/work/event-klinik.jpg"],
+      },
+    ],
   },
 ];
 
-const categories: Category[] = ["All", "Product", "Portrait", "Commercial"];
-
 export default function Work() {
-  const [active, setActive] = useState<Category>("All");
-
-  const filtered =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
-
   return (
     <section id="work" className="py-32 px-6 max-w-6xl mx-auto">
-      <div className="mb-12">
+      <div className="mb-20">
         <p className="text-black/40 text-xs font-semibold tracking-[0.25em] uppercase mb-4">
           Our Work
         </p>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8">
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight">
           The results
           <br />
           <span className="text-black/30">speak for themselves.</span>
         </h2>
-
-        <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
-                active === cat
-                  ? "bg-black text-white"
-                  : "border border-black/20 text-black/50 hover:border-black/50 hover:text-black"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
       </div>
 
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-        {filtered.map((project) => (
-          <div
-            key={project.id}
-            className="break-inside-avoid mb-4 group relative overflow-hidden bg-[#111]"
-          >
-            <div className="relative overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.image}`}
-                alt={project.title}
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-white text-xs font-mono tracking-widest uppercase mb-2">
-                  {project.category}
-                </span>
-                <h3 className="text-white font-bold text-lg leading-tight">
-                  {project.title}
-                </h3>
-                <p className="text-white/60 text-sm mt-1">{project.description}</p>
-              </div>
+      <div className="space-y-24">
+        {categories.map((cat) => (
+          <div key={cat.name}>
+            {/* Category label */}
+            <div className="flex items-center gap-4 mb-10">
+              <span className="text-xs font-black tracking-[0.3em] uppercase text-black">
+                {cat.name}
+              </span>
+              <div className="flex-1 h-px bg-black/10" />
+              <span className="text-xs text-black/30 font-mono">
+                {cat.projects.length} {cat.projects.length === 1 ? "project" : "projects"}
+              </span>
+            </div>
+
+            {/* Projects grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cat.projects.map((project) => (
+                <div key={project.title} className="group">
+                  {/* Primary image */}
+                  <div className="relative overflow-hidden bg-zinc-100 mb-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${BASE}${project.images[0]}`}
+                      alt={project.title}
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* Extra images shown as a strip if >1 */}
+                    {project.images.length > 1 && (
+                      <div className="absolute bottom-0 left-0 right-0 flex gap-1 p-2">
+                        {project.images.slice(1).map((img, i) => (
+                          <div
+                            key={i}
+                            className="flex-1 h-14 overflow-hidden"
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={`${BASE}${img}`}
+                              alt=""
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Project info */}
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="font-bold text-sm tracking-tight">{project.title}</h3>
+                    {project.images.length > 1 && (
+                      <span className="text-xs text-black/30 font-mono">
+                        {project.images.length} shots
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
