@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-white">
       {/* ThreeUI background — inverted to dark lines on white */}
-      <div className="absolute inset-0 z-0" style={{ filter: "invert(1)" }}>
+      <div className="absolute inset-0 z-0" style={{ filter: "invert(1) saturate(0)" }}>
         <ConstellationField />
       </div>
 
