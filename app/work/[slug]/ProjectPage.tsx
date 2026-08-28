@@ -6,10 +6,10 @@ import { Project } from "@/lib/projects";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-const ConstellationField = dynamic(
+const KoiStudies = dynamic(
   () =>
-    import("@designcodeio/threeui/components/ConstellationField").then(
-      (m) => ({ default: m.ConstellationField })
+    import("@designcodeio/threeui/components/KoiStudies").then(
+      (m) => ({ default: m.KoiStudies })
     ),
   { ssr: false }
 );
@@ -23,32 +23,29 @@ export default function ProjectPage({
 }) {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <div className="relative h-[70vh] flex items-end overflow-hidden bg-black">
-        {/* ThreeUI background */}
-        <div className="absolute inset-0 z-0">
-          <ConstellationField />
-        </div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-        {/* Back link */}
+      {/* Header */}
+      <div className="max-w-6xl mx-auto px-6 pt-28 pb-12">
         <Link
           href="/#work"
-          className="absolute top-8 left-8 z-20 text-white/60 hover:text-white text-xs font-semibold tracking-widest uppercase transition-colors flex items-center gap-2"
+          className="inline-flex items-center gap-2 text-black/30 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors mb-10"
         >
           ← Work
         </Link>
 
-        {/* Project title */}
-        <div className="relative z-20 px-8 pb-12 md:px-16">
-          <p className="text-white/40 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-            {categoryLabel}
-          </p>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-none">
-            {project.title}
-          </h1>
-          <p className="text-white/50 mt-4 max-w-lg text-base">{project.description}</p>
-        </div>
+        <p className="text-black/30 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+          {categoryLabel}
+        </p>
+        <h1 className="text-5xl md:text-7xl font-black text-black tracking-tight leading-none mb-5">
+          {project.title}
+        </h1>
+        <p className="text-black/50 text-base md:text-lg max-w-xl leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+
+      {/* KoiStudies visual divider */}
+      <div className="w-full h-48 md:h-64 overflow-hidden">
+        <KoiStudies className="w-full h-full" />
       </div>
 
       {/* Photo grid */}

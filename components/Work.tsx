@@ -51,14 +51,12 @@ export default function Work() {
                   </div>
 
                   {/* Project info */}
-                  <div className="p-5 flex items-center justify-between">
-                    <div>
+                  <div className="p-5 flex items-start justify-between gap-4">
+                    <div className="min-w-0">
                       <p className="font-bold text-sm">{project.title}</p>
-                      <p className="text-black/40 text-xs mt-0.5">
-                        {project.images.length} {project.images.length === 1 ? "shot" : "shots"}
-                      </p>
+                      <p className="text-black/40 text-xs mt-1 leading-relaxed">{project.description}</p>
                     </div>
-                    <span className="text-black/20 group-hover:text-black group-hover:translate-x-1 transition-all duration-200 text-lg">
+                    <span className="text-black/20 group-hover:text-black group-hover:translate-x-1 transition-all duration-200 text-lg shrink-0 mt-0.5">
                       →
                     </span>
                   </div>

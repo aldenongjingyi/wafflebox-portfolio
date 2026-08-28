@@ -14,12 +14,12 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-white">
       {/* ThreeUI background — inverted to dark lines on white */}
-      <div className="absolute inset-0 z-0" style={{ filter: "invert(1) saturate(0)" }}>
+      <div className="absolute inset-0 z-0" style={{ filter: "invert(1) saturate(0) brightness(1.5)" }}>
         <ConstellationField />
       </div>
 
       {/* Light overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/20 via-transparent to-white" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/80 via-transparent to-white" />
 
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
