@@ -15,8 +15,9 @@ export default function About() {
           </h2>
           <div className="space-y-4 text-black/50 text-base leading-relaxed max-w-lg">
             <p>
-              WaffleBox Productions is a remote-first creative studio handling
-              photography, content, and design for brands that want to stand out.
+              WaffleBox Productions is a remote-first creative studio of photographers
+              with 5+ years of experience — handling photography, content, and design
+              for brands that want to stand out.
             </p>
             <p>
               We&apos;ve worked with food brands, health products, university clubs, and
@@ -30,7 +31,7 @@ export default function About() {
         <div className="grid grid-cols-2 gap-px bg-black/10">
           {[
             { value: "18+", label: "Projects Delivered" },
-            { value: "100%", label: "Remote Capable" },
+            { value: "5+", label: "Years of Experience" },
             { value: "3", label: "Services Under One Roof" },
             { value: "Fast", label: "Turnaround" },
           ].map((stat) => (
