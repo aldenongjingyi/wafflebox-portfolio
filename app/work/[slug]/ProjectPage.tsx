@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Project } from "@/lib/projects";
-import PhotoCardStack from "@/components/PhotoCardStack";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -13,12 +12,10 @@ export default function ProjectPage({
   project: Project;
   categoryLabel: string;
 }) {
-  const images = project.images.map((src) => `${BASE}${src}`);
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-6 pt-28 pb-4">
+      <div className="max-w-6xl mx-auto px-6 pt-28 pb-12">
         <Link
           href="/#work"
           className="inline-flex items-center gap-2 text-black/30 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors mb-10"
@@ -37,8 +34,27 @@ export default function ProjectPage({
         </p>
       </div>
 
-      {/* Card stack photo showcase */}
-      <PhotoCardStack images={images} title={project.title} />
+      {/* Photo grid */}
+      <div className="max-w-6xl mx-auto px-6 pb-20">
+        {project.images.length === 0 ? (
+          <div className="text-center py-32 text-black/30">
+            <p className="text-sm tracking-widest uppercase">Photos coming soon</p>
+          </div>
+        ) : (
+          <div className="columns-1 sm:columns-2 gap-4">
+            {project.images.map((src, i) => (
+              <div key={i} className="break-inside-avoid mb-4 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${BASE}${src}`}
+                  alt={`${project.title} ${i + 1}`}
+                  className="w-full h-auto"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Footer nav */}
       <div className="border-t border-black/10 px-6 py-10 max-w-6xl mx-auto flex justify-between items-center">
