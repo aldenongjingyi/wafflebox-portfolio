@@ -40,9 +40,6 @@ export default function Creatives() {
                   src={`${BASE}${member.photo}`}
                   alt={member.name}
                   className="w-full h-full object-cover object-top grayscale transition-all duration-500 group-hover:grayscale-0"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                  }}
                 />
               </div>
 
