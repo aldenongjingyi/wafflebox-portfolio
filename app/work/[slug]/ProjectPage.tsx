@@ -1,18 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Project } from "@/lib/projects";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
-const KoiStudies = dynamic(
-  () =>
-    import("@designcodeio/threeui/components/KoiStudies").then(
-      (m) => ({ default: m.KoiStudies })
-    ),
-  { ssr: false }
-);
 
 export default function ProjectPage({
   project,
@@ -45,7 +36,14 @@ export default function ProjectPage({
 
       {/* KoiStudies visual divider */}
       <div className="w-full h-48 md:h-64 overflow-hidden">
-        <KoiStudies className="w-full h-full" />
+        <iframe
+          src={`${BASE}/synthralos-halftone.html`}
+          title="Koi Studies"
+          sandbox="allow-scripts"
+          allow="autoplay"
+          className="w-full h-full border-0"
+          style={{ display: "block" }}
+        />
       </div>
 
       {/* Photo grid */}
