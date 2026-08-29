@@ -25,6 +25,7 @@ export default function About() {
               every project.
             </p>
             <p>No average here. Just results.</p>
+            <p className="text-black/30 text-sm">Co-founded by Alden and ShuJin.</p>
           </div>
         </div>
 
