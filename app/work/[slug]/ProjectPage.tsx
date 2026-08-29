@@ -29,7 +29,7 @@ export default function ProjectPage({
         <h1 className="text-5xl md:text-7xl font-black text-black tracking-tight leading-none mb-5">
           {project.title}
         </h1>
-        <p className="text-black/50 text-base md:text-lg max-w-xl leading-relaxed">
+        <p className="text-black/50 text-base md:text-lg leading-relaxed">
           {project.description}
         </p>
       </div>
